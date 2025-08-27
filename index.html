@@ -6,26 +6,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emergency Hotline</title>
     <!-- font-awesome cdn -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Tailwind and daisy ui cdn -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- custom css -->
+     <link rel="stylesheet" href="./style.css">
 </head>
 
-<body>
+<body class="hind-madurai">
     <!-- nav section -->
     <div class="navbar flex items-center justify-between bg-base-100 w-10/12 mx-auto">
         <div class="overflow-hidden">
             <div class="flex gap-2 items-center font-bold text-[#006747]">
-                <a><img class="w-12" src="./assets/logo.png" alt=""></a>
-                <h4 class="text-2xl">Emergency <br>Service</h4>
+                <a href="#"><img class="w-12" src="./assets/logo.png" alt=""></a>
+                <a href="#">
+                    <h4 class="text-2xl">Emergency <br>Service</h4>
+                </a>
             </div>
         </div>
         <div class="flex-none">
             <div class="flex items-center gap-5">
-                <button class="btn flex py-5 px-9 rounded-3xl bg-[#41ff6b1a] font-black"><span id="life-btn">0</span><img src="./assets/heart.png" alt="heart icon" class="w-6"></button>
-                <button class="btn flex py-5 px-9  rounded-3xl bg-[#41ff6b1a] font-black"><span id="cridit-btn">0</span><img src="./assets/coin.png" alt="coin icon" class="w-6"></button>
-                <button class="btn py-5 px-9 rounded-3xl bg-[#00A63E] text-white"><span id="copy-btn">0</span>Copy</button>
+                <button class="btn flex py-5 px-9 rounded-3xl bg-[#41ff6b1a] font-black"><span
+                        id="life-btn">0</span><img src="./assets/heart.png" alt="heart icon" class="w-6"></button>
+                <button class="btn flex py-5 px-9  rounded-3xl bg-[#41ff6b1a] font-black"><span
+                        id="cridit-btn">0</span><img src="./assets/coin.png" alt="coin icon" class="w-6"></button>
+                <button class="btn py-5 px-9 rounded-3xl bg-[#00A63E] text-white"><span
+                        id="copy-btn">0</span>Copy</button>
+            </div>
+        </div>
+    </div>
+    <!-- hero section -->
+    <div class="hero"
+        style="background: linear-gradient(90deg, #013223 0%, #006747 49.99%, #013223 100%);">
+        <div class="hero-overlay"></div>
+        <div class="hero-content text-neutral-content text-center">
+            <div class="text-white flex flex-col justify-center items-center py-3">
+                <div class="w-24"><img src="./assets/logo-dark.png" alt="logo-dark" srcset=""></div>
+                <h2 class="font-bold text-[40px]">Emergency Service Directory</h2>
+                <p class="text-xl font-medium">Government Emergency Services at Your Fingertip – A Project by  Government of the People’s Republic of Bangladesh</p>
             </div>
         </div>
     </div>
