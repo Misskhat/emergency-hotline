@@ -43,15 +43,11 @@ for (const callBtn of callBtns) {
         alert(`Calling to ${serviceName} - Service number is ${serviceNumber}`);
 
         // keep the time  current time in a variable
-        function timeAMorPM(hour) {
+        function timeAMorPM() {
             const currentTime = new Date();
-            if (hour >= 12) {
-                const currentTimeConvertToLocalTime = currentTime.toLocaleTimeString() + " " + "PM";
-                return currentTimeConvertToLocalTime;
-            } else {
-                const currentTimeConvertToLocalTime = currentTime.toLocaleTimeString() + " " + "AM";
-                return currentTimeConvertToLocalTime;
-            }
+            const currentTimeToString = currentTime.toLocaleTimeString('en-US', {hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true});
+            return currentTimeToString
+
         }
 
         // dynamically add the service name & number with calling history field;
@@ -73,11 +69,30 @@ for (const callBtn of callBtns) {
         callHistory.appendChild(newDiv);
 
         // clear button event added;
-        const clearBtn = document.getElementById('clear-btn');
-        clearBtn.addEventListener('click', function(){
-            document.getElementById('history-section-store').innerHTML  = '';
-        })
+        const clearBtn = getElement("clear-btn");
+        clearBtn.addEventListener("click", function () {
+            document.getElementById("history-section-store").innerHTML = "";
+        });
     });
+}
 
-    
+// target the copy btn;
+const totalCopyBtn = getElement('total-copy-btn');
+let totalCopyBtnConvert = parseFloat(totalCopyBtn.innerText)
+
+const copyBtns = document.getElementsByClassName("copy-btn");
+for (const copyBtn of copyBtns) {
+    copyBtn.addEventListener("click", function () {
+
+        // increment the copy count;
+        totalCopyBtnConvert = totalCopyBtnConvert + 1
+        totalCopyBtn.innerText = totalCopyBtnConvert;
+        alert(`Copy count: ${totalCopyBtnConvert}`)
+
+        // copy the service number and alert on UI
+        const serviceName = copyBtn.parentElement.parentElement.children[1].children[0].innerText;
+        const serviceNumber = copyBtn.parentElement.parentElement.children[2].children[0].innerText;
+        navigator.clipboard.writeText(serviceNumber);
+        
+    });
 }
